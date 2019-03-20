@@ -1,4 +1,5 @@
 dist
+dev-helpers/docs
 node_modules
 .idea
 .vscode
