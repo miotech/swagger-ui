@@ -1,5 +1,15 @@
-dist
+dist/swagger-ui-standalone-preset.js
+dist/swagger-ui-standalone-preset.js.map
+dist/swagger-ui.js
+dist/swagger-ui.css
+dist/swagger-ui.js.map
+dist/swagger-ui.css.map
+dist/swagger-ui-bundle.js
+dist/swagger-ui-bundle.js.map
+
 dev-helpers/docs
+dist/docs
+
 node_modules
 .idea
 .vscode

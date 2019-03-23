@@ -62,7 +62,7 @@ module.exports = require("./make-webpack-config")(rules, {
     chunkFilename: "[id].js"
   },
   devServer: {
-    port: 3200,
+    port: 32001,
     publicPath: "/",
     noInfo: true,
     hot: true,
