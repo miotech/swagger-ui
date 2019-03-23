@@ -1,21 +1,47 @@
 @mixin text_body($color: $text-body-default-font-color)
 {
-    font-family: sans-serif;
-
+    font-family: $font-family-primary;
     color: $color;
 }
 
 @mixin text_code($color: $text-code-default-font-color)
 {
-    font-family: monospace;
-    font-weight: 600;
-
+    font-family: $font-family-fixed-width;
     color: $color;
 }
 
 @mixin text_headline($color: $text-headline-default-font-color)
 {
-    font-family: sans-serif;
-
+    font-family: $font-family-primary;
+    font-weight: 200;
     color: $color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  padding-bottom: 6px;
+  border-bottom: 1px solid $color-sep-line;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+  margin: 0;
 }

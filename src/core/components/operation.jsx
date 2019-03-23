@@ -183,6 +183,8 @@ export default class Operation extends PureComponent {
                   </div> : null
               }
 
+              {
+                /* Yishu Fang - Hide try me button
             <div className={(!tryItOutEnabled || !response || !allowTryItOut) ? "execute-wrapper" : "btn-group"}>
               { !tryItOutEnabled || !allowTryItOut ? null :
 
@@ -202,6 +204,8 @@ export default class Operation extends PureComponent {
                     method={ method }/>
               }
             </div>
+                */
+              }
 
             {executeInProgress ? <div className="loading-container"><div className="loading"></div></div> : null}
 

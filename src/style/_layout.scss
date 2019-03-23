@@ -18,12 +18,8 @@
     display: flex;
     align-items: center;
 
-    padding: 10px 20px 10px 10px;
-
     cursor: pointer;
     transition: all .2s;
-
-    border-bottom: 1px solid rgba($opblock-tag-border-bottom-color, .3);
 
     &:hover
     {
@@ -34,7 +30,6 @@
 @mixin method($color)
 {
     border-color: $color;
-    background: rgba($color, .1);
 
     .opblock-summary-method
     {
@@ -52,14 +47,11 @@
     }
 }
 
-
-
-
 .opblock-tag
 {
-    font-size: 24px;
-
-    margin: 0 0 5px 0;
+    padding: 8px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
 
     @include text_headline();
 
@@ -91,11 +83,9 @@
 
 .parameter__type
 {
-    font-size: 12px;
-
+    font-size: $font-size-third;
+    font-weight: lighter;
     padding: 5px 0;
-
-    @include text_code();
 }
 
 .view-line-link
@@ -117,8 +107,7 @@
     margin: 0 0 15px 0;
 
     border: 1px solid $opblock-border-color;
-    border-radius: 4px;
-    box-shadow: 0 0 3px rgba($opblock-box-shadow-color,.19);
+    border-radius: 2px;
 
     .tab-header
     {
@@ -129,8 +118,6 @@
         .tab-item
         {
             padding: 0 40px;
-
-            cursor: pointer;
 
             &:first-of-type
             {
@@ -154,7 +141,7 @@
                             width: 120%;
                             height: 4px;
 
-                            content: '';
+                            //content: ''; // remove tab style
                             transform: translateX(-50%);
 
                             background: $opblock-tab-header-tab-item-active-h4-span-after-background-color;
@@ -174,17 +161,17 @@
         }
     }
 
+    .opblock-section,
+    .responses-wrapper {
+      border-top: 1px solid $color-sep-line;
+    }
+
     .opblock-section-header
     {
         display: flex;
         align-items: center;
 
-        padding: 8px 20px;
-
-        min-height: 50px;
-
-        background: rgba($opblock-isopen-section-header-background-color,.8);
-        box-shadow: 0 1px 2px rgba($opblock-isopen-section-header-box-shadow-color,.1);
+        padding: 16px 16px;
 
         >label
         {
@@ -219,17 +206,11 @@
 
     .opblock-summary-method
     {
-        font-size: 14px;
-        font-weight: bold;
-
+        font-size: $font-size-secondary;
+        font-weight: lighter;
         min-width: 80px;
         padding: 6px 15px;
-
         text-align: center;
-
-        border-radius: 3px;
-        background: $opblock-summary-method-background-color;
-        text-shadow: 0 1px 0 rgba($opblock-summary-method-text-shadow-color,.1);
 
         @include text_headline($opblock-summary-method-font-color);
     }
@@ -238,11 +219,10 @@
     .opblock-summary-operation-id,
     .opblock-summary-path__deprecated
     {
-        font-size: 16px;
+        font-size: $font-size-primary-fixed-with;
         @media (max-width: 768px) {
           font-size: 12px;
         }
-
 
         display: flex;
         align-items: center;
@@ -267,7 +247,9 @@
 
     .opblock-summary-description
     {
-        font-size: 13px;
+        position: relative;
+        top: 1px;
+        font-size: $font-size-secondary;
 
         flex: 1 1 auto;
 
@@ -280,7 +262,7 @@
     {
         display: flex;
         align-items: center;
-
+        margin: 0;
         padding: 5px;
 
         cursor: pointer;
@@ -428,30 +410,13 @@
 .opblock-external-docs-wrapper,
 .opblock-title_normal
 {
-    font-size: 12px;
+    font-size: $font-size-primary;
+    line-height: $line-height-primary;
 
-    margin: 0 0 5px 0;
-    padding: 15px 20px;
+    margin: 0 0 0 0;
+    padding: 8px 16px;
 
     @include text_body();
-
-    h4
-    {
-        font-size: 12px;
-
-        margin: 0 0 5px 0;
-
-        @include text_body();
-    }
-
-    p
-    {
-        font-size: 14px;
-
-        margin: 0;
-
-        @include text_body();
-    }
 }
 
 .opblock-external-docs-wrapper {
@@ -462,7 +427,7 @@
 
 .execute-wrapper
 {
-    padding: 20px;
+    padding: $line-height-primary-fixed-width;
 
     text-align: right;
 
@@ -495,22 +460,14 @@
 
 .responses-inner
 {
-    padding: 20px;
-
-    h5,
-    h4
-    {
-        font-size: 12px;
-
-        margin: 10px 0 5px 0;
-
-        @include text_body();
-    }
+    padding: 16px;
+    padding-top: 0;
 }
 
 .response-col_status
 {
-    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     @include text_body();
 
@@ -524,6 +481,7 @@
 
 .response-col_links
 {
+    display: none;
     padding-left: 2em;
     max-width: 40em;
     font-size: 14px;
@@ -542,39 +500,23 @@
 {
     div.markdown, div.renderedMarkdown
     {
-        font-size: 12px;
-        font-style: italic;
-
-        display: block;
-
+        font-size: $font-size-primary-fixed-with;
         margin: 0;
-        padding: 10px;
 
-        border-radius: 4px;
-        background: $response-col-description-inner-markdown-background-color;
+        line-height: $line-height-primary-fixed-width;
+        color: #37474f;
+        font-weight: normal;
+        white-space: pre-wrap;
+        background: $background-color-shadow;
+        padding: 8px;
+        hyphens: auto;
 
-        @include text_code($response-col-description-inner-markdown-font-color);
+        overflow-wrap: break-word;
 
-        p
-        {
-            margin: 0;
-            @include text_code($response-col-description-inner-markdown-font-color);
+        p {
+          margin: 0;
         }
-
-        a
-        {
-            @include text_code($response-col-description-inner-markdown-link-font-color);
-            text-decoration: underline;
-            &:hover {
-                color: $response-col-description-inner-markdown-link-font-color-hover;
-            }
-        }
-
-        th
-        {
-            @include text_code($response-col-description-inner-markdown-font-color);
-            border-bottom: 1px solid $response-col-description-inner-markdown-font-color;
-        }
+        @include text_code(#37474f);
     }
 }
 
@@ -591,31 +533,19 @@
 
 .opblock-body pre
 {
-    font-size: 12px;
-
+    font-size: $font-size-primary-fixed-with;
     margin: 0;
-    padding: 10px;
 
+    line-height: $line-height-primary-fixed-width;
+    color: #37474f;
+    font-weight: normal;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-all;
-    word-break: break-word;
+    background: #f7f7f7;
+    padding: 8px;
     hyphens: auto;
 
-    border-radius: 4px;
-    background: $opblock-body-background-color;
-
     overflow-wrap: break-word;
-    @include text_code($opblock-body-font-color);
-    span
-    {
-        color: $opblock-body-font-color !important;
-    }
-
-    .headerline
-    {
-        display: block;
-    }
+    @include text_code(#37474f);
 }
 
 .highlight-code {
@@ -623,8 +553,6 @@
 
   > .microlight {
     overflow-y: auto;
-    max-height: 400px;
-    min-height: 6em;
   }
 }
 
@@ -799,7 +727,7 @@ a.nostyle {
     height: 100%;
     font-size: 1.2em;
     text-align: center;
-    line-height: 1.5em;
+    line-height: $line-height-primary;
 
     padding: 0px .6em;
 

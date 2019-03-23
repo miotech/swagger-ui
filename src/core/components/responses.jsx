@@ -81,7 +81,7 @@ export default class Responses extends React.Component {
     return (
       <div className="responses-wrapper">
         <div className="opblock-section-header">
-          <h4>Responses</h4>
+          <h5>Responses</h5>
             { specSelectors.isOAS3() ? null : <label>
               <span>Response content type</span>
               <ContentType value={producesValue}
@@ -106,7 +106,9 @@ export default class Responses extends React.Component {
 
           }
 
-          <table className="responses-table">
+          { /* Change from <table> to <div> to avoid print to PDF problem */ }
+          <div className="responses-table">
+            { /*
             <thead>
               <tr className="responses-header">
                 <td className="col col_header response-col_status">Code</td>
@@ -114,7 +116,9 @@ export default class Responses extends React.Component {
                 { specSelectors.isOAS3() ? <td className="col col_header response-col_links">Links</td> : null }
               </tr>
             </thead>
-            <tbody>
+              */
+            }
+            <div>
               {
                 responses.entrySeq().map( ([code, response]) => {
 
@@ -136,8 +140,8 @@ export default class Responses extends React.Component {
                     )
                 }).toArray()
               }
-            </tbody>
-          </table>
+            </div>
+          </div>
         </div>
       </div>
     )

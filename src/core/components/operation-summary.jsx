@@ -58,7 +58,7 @@ export default class OperationSummary extends PureComponent {
 
     return (
 
-      <div className={`opblock-summary opblock-summary-${method}`} onClick={toggleShown} >
+      <h4 className={`opblock-summary opblock-summary-${method}`} onClick={toggleShown} >
         <OperationSummaryMethod method={method} />
         <OperationSummaryPath getComponent={getComponent} operationProps={operationProps} specPath={specPath} />
 
@@ -81,7 +81,7 @@ export default class OperationSummary extends PureComponent {
             />
         }
         <JumpToPath path={specPath} />{/* TODO: use wrapComponents here, swagger-ui doesn't care about jumpToPath */}
-      </div>
+      </h4>
     )
 
   }

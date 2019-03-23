@@ -121,9 +121,9 @@ export default class Info extends React.Component {
     return (
       <div className="info">
         <hgroup className="main">
-          <h2 className="title" >{ title }
+          <h1 className="title" >{ title }
             { version && <VersionStamp version={version}></VersionStamp> }
-          </h2>
+          </h1>
           { host || basePath ? <InfoBasePath host={ host } basePath={ basePath } /> : null }
           { url && <InfoUrl getComponent={getComponent} url={url} /> }
         </hgroup>

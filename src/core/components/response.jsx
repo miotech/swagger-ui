@@ -126,18 +126,21 @@ export default class Response extends React.Component {
 
     let example = getExampleComponent( sampleResponse, examples, HighlightCode )
 
+    // Yishu Fang - Change to <div> to avoid table print to PDF layout problem.
     return (
-      <tr className={ "response " + ( className || "") } data-code={code}>
-        <td className="col response-col_status">
+      <div className={ "response " + ( className || "") } data-code={code}>
+        <div className="col response-col_status">
           { code }
-        </td>
-        <td className="col response-col_description">
+        </div>
+        <div className="col response-col_description">
 
           <div className="response-col_description__inner">
             <Markdown source={ response.get( "description" ) } />
           </div>
 
-          { isOAS3 ?
+          {
+            /* Yishu Fang - hide accept type selection
+          isOAS3 ?
             <div className={cx("response-content-type", {
               "controls-accept-header": controlsAcceptHeader
             })}>
@@ -148,7 +151,9 @@ export default class Response extends React.Component {
                   />
                 { controlsAcceptHeader ? <small>Controls <code>Accept</code> header.</small> : null }
             </div>
-             : null }
+             : null
+             */
+          }
 
           { example ? (
             <ModelExample
@@ -168,7 +173,7 @@ export default class Response extends React.Component {
           ) : null}
 
 
-        </td>
+        </div>
         {specSelectors.isOAS3() ? <td className="col response-col_links">
           { links ?
             links.toSeq().map((link, key) => {
@@ -176,7 +181,7 @@ export default class Response extends React.Component {
             })
           : <i>No links</i>}
         </td> : null}
-      </tr>
+      </div>
     )
   }
 }

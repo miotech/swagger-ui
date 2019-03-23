@@ -132,6 +132,9 @@ export default class Topbar extends React.Component {
       control.push(<Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>)
     }
 
+    // hide topbar
+    return <div />;
+
     return (
       <div className="topbar">
         <div className="wrapper">

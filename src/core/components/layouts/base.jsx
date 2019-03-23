@@ -96,7 +96,9 @@ export default class BaseLayout extends React.Component {
               </Col>
             </Row>
 
-            {hasServers || hasSchemes || hasSecurityDefinitions ? (
+            {
+              /* Yishu Fang - hide server selection
+            hasServers || hasSchemes || hasSecurityDefinitions ? (
               <div className="scheme-container">
                 <Col className="schemes wrapper" mobile={12}>
                   {hasServers ? (<ServersContainer />) : null}
@@ -104,20 +106,27 @@ export default class BaseLayout extends React.Component {
                   {hasSecurityDefinitions ? (<AuthorizeBtnContainer />) : null}
                 </Col>
               </div>
-            ) : null}
+            ) : null
+               */
+            }
 
             <FilterContainer/>
 
             <Row>
               <Col mobile={12} desktop={12} >
+                <h2 style={{ marginBottom: '0' }}>API List</h2>
                 <Operations/>
               </Col>
             </Row>
+            {
+              /* Yishu Fang - hide schemas
             <Row>
               <Col mobile={12} desktop={12} >
                 <Models/>
               </Col>
             </Row>
+              */
+            }
           </VersionPragmaFilter>
         </div>
       )

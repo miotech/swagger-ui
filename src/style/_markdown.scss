@@ -3,21 +3,19 @@
     margin: 1em auto;
   }
   pre {
-    color: black;
+    line-height: $line-height-primary-fixed-width;
+    color: #37474f;
     font-weight: normal;
     white-space: pre-wrap;
-    background: none;
-    padding: 0px;
+    background: $background-color-shadow;
+    padding: 8px;
   }
 
   code {
-    font-size: 14px;
-    padding: 5px 7px;
-
-    border-radius: 4px;
-    background: rgba($info-code-background-color,.05);
-
-    @include text_code($info-code-font-color);
+    font-size: $font-size-primary-fixed-with;
+    padding: 1px 4px;
+    background: $background-color-shadow;
+    @include text_code(#37474f);
   }
 
   pre > code {

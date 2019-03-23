@@ -46,15 +46,14 @@ table
         {
             td
             {
-                padding: 10px 0 0 0;
+                padding: 0 0 10px 0;
 
                 vertical-align: top;
 
                 &:first-of-type
                 {
-                    max-width: 20%;
-                    min-width: 6em;
-                    padding: 10px 0;
+                    width: 80px;
+                    padding: 8px 0;
                 }
             }
         }
@@ -67,15 +66,10 @@ table
             th,
             td
             {
-                font-size: 12px;
-                font-weight: bold;
-
-                padding: 12px 0;
-
+                font-size: $font-size-primary;
+                font-weight: lighter;
+                padding: 8px 0;
                 text-align: left;
-
-                border-bottom: 1px solid rgba($table-thead-td-border-bottom-color, .2);
-
                 @include text_body();
             }
         }
@@ -84,6 +78,10 @@ table
 
 .parameters-col_description
 {
+    p {
+        margin: 8px !important;
+    }
+    padding-left: 16px;
     input[type=text]
     {
         width: 100%;
@@ -99,8 +97,6 @@ table
 {
     font-size: 16px;
     font-weight: normal;
-
-    @include text_headline();
 
     &.required
     {
@@ -125,17 +121,15 @@ table
 .parameter__in,
 .parameter__extension
 {
-    font-size: 12px;
-    font-style: italic;
-
-    @include text_code($table-parameter-in-font-color);
+    font-size: $font-size-third;
+    font-weight: lighter;
+    padding-left: 4px;
 }
 
 .parameter__deprecated
 {
-    font-size: 12px;
+    font-size: $font-size-third;
     font-style: italic;
-
     @include text_code($table-parameter-deprecated-font-color);
 }
 
@@ -156,5 +150,5 @@ table
 
 .table-container
 {
-    padding: 20px;
+    padding: 0 16px;
 }
