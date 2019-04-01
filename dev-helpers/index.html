@@ -27,11 +27,55 @@
     {
       margin:0;
     }
+
+    .copyright {
+      display: none;
+      font-family: Roboto, "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      position: fixed;
+      bottom: 0mm;
+      left: 5mm;
+    }
+    .logo {
+      display: none;
+      position: fixed;
+      bottom: 0mm;
+      right: 5mm;
+      background-image: url("mioapi-logo.svg");
+      background-size: 200px 58px;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 58px;
+
+      transform: translateY(10mm);
+    }
+
+    @page {
+        size: A4;
+        margin: 11mm 17mm 37mm 17mm;
+        padding: 50mm;
+    }
+
+    @media print {
+      /*html, body {*/
+        /*width: 210mm;*/
+        /*height: 297mm;*/
+      /*}*/
+      body {
+        margin-bottom: 70mm;
+        padding-bottom: 70mm;
+      }
+      /*.copyright, .logo {*/
+        /*display: block;*/
+      /*}*/
+    }
   </style>
 </head>
 
 <body>
   <div id="swagger-ui"></div>
+  <div class="copyright">©2016-2019 MioTech Techonlogy. All rights reserved.</div>
+  <div class="logo"></div>
 
   <script src="./swagger-ui-bundle.js"> </script>
   <script src="./swagger-ui-standalone-preset.js"> </script>

@@ -13,7 +13,7 @@
 @mixin text_headline($color: $text-headline-default-font-color)
 {
     font-family: $font-family-primary;
-    font-weight: 200;
+    font-weight: 400;
     color: $color;
 }
 
@@ -29,12 +29,14 @@ h2 {
   font-size: $font-size-h2;
   padding-bottom: 6px;
   border-bottom: 1px solid $color-sep-line;
+  font-weight: 400 !important;
 }
 
 h3 {
   font-size: $font-size-h3;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  color: $color-api-blue !important;
 }
 
 h4 {
@@ -44,4 +46,15 @@ h4 {
 h5 {
   font-size: $font-size-h5;
   margin: 0;
+}
+
+.swagger-ui .renderedMarkdown p,
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
