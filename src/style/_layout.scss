@@ -747,3 +747,32 @@ a.nostyle {
     }
   }
 }
+
+.swagger-ui {
+  padding-left: 280px;
+}
+
+.toc {
+  padding: 12px 8px 12px 0;
+  background-color: #f1eeee;
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  width: 280px;
+  z-index: 1000;
+  font-size: 12px !important;
+
+  ul {
+    margin: 0 0 0 0;
+    list-style-type: none;
+    padding: 0 0 0 12px
+  }
+  li {
+    line-height: 1.1 !important;
+    margin: 6px 0;
+  }
+
+  a {
+    font-size: 10px !important;
+  }
+}

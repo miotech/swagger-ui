@@ -7,7 +7,8 @@ import { sanitizer } from "core/components/providers/markdown"
 
 const parser = new Remarkable("commonmark")
 parser.block.ruler.enable(["table"])
-parser.set({ linkTarget: "_blank" })
+// commented out by Yishu
+// parser.set({ linkTarget: "_blank" })
 
 export const Markdown = ({ source, className = "" }) => {
   if ( source ) {

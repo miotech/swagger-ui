@@ -23,6 +23,11 @@ export default class OperationSummary extends PureComponent {
     summary: ""
   }
 
+  // add by Yishu: open all the item by default
+  componentDidMount() {
+    this.props.toggleShown();
+  }
+
   render() {
 
     let {
