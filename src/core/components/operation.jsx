@@ -78,7 +78,8 @@ export default class Operation extends PureComponent {
     let {
       description,
       externalDocs,
-      schemes
+      schemes,
+      title
     } = op
 
     let operation = operationProps.getIn(["op"])

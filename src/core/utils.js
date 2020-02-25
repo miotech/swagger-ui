@@ -235,13 +235,13 @@ export function highlight (el) {
             node = _document.createElement("span")
           ).setAttribute("style", [
             // 0: not formatted
-            "color: #555; font-weight: bold;",
+            "color: #fff; font-weight: bold;",
             // 1: keywords
             "",
             // 2: punctuation
             "",
             // 3: strings and regexps
-            "color: #555;",
+            "color: #fff;",
             // 4: comments
             ""
           ][
@@ -349,13 +349,13 @@ export function extractFileNameFromContentDispositionHeader(value){
     /filename="([^;]*);?"/i,
     /filename=([^;]*);?/i
   ]
-  
+
   let responseFilename
   patterns.some(regex => {
     responseFilename = regex.exec(value)
     return responseFilename !== null
   })
-    
+
   if (responseFilename !== null && responseFilename.length > 1) {
     try {
       return decodeURIComponent(responseFilename[1])
@@ -810,7 +810,7 @@ export function paramToIdentifier(param, { returnAll = false, allowHashes = true
   }
   const paramName = param.get("name")
   const paramIn = param.get("in")
-  
+
   let generatedIdentifiers = []
 
   // Generate identifiers in order of most to least specificity
@@ -818,7 +818,7 @@ export function paramToIdentifier(param, { returnAll = false, allowHashes = true
   if (param && param.hashCode && paramIn && paramName && allowHashes) {
     generatedIdentifiers.push(`${paramIn}.${paramName}.hash-${param.hashCode()}`)
   }
-  
+
   if(paramIn && paramName) {
     generatedIdentifiers.push(`${paramIn}.${paramName}`)
   }

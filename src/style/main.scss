@@ -19,4 +19,6 @@
     @include text_body();
     @import 'split-pane-mode';
     @import 'markdown';
+
+  font-size: $font-size-primary;
 }

@@ -61,7 +61,7 @@ class License extends React.Component {
     let { license, getComponent } = this.props
 
     const Link = getComponent("Link")
-  
+
     let name = license.get("name") || "License"
     let url = license.get("url")
 
@@ -82,7 +82,7 @@ export class InfoUrl extends React.PureComponent {
     getComponent: PropTypes.func.isRequired
   }
 
-  
+
   render() {
     const { url, getComponent } = this.props
 
@@ -107,6 +107,7 @@ export default class Info extends React.Component {
     let version = info.get("version")
     let description = info.get("description")
     let title = info.get("title")
+    let logo = info.get("logo")
     let termsOfService = info.get("termsOfService")
     let contact = info.get("contact")
     let license = info.get("license")
@@ -121,7 +122,10 @@ export default class Info extends React.Component {
     return (
       <div className="info">
         <hgroup className="main">
-          <h1 className="title" >{ title }
+          <h1 className="title" >
+            { logo ? (
+              <img src={logo} style={{ height: '32px' }} />
+            ) : title }
             { version && <VersionStamp version={version}></VersionStamp> }
           </h1>
           { host || basePath ? <InfoBasePath host={ host } basePath={ basePath } /> : null }

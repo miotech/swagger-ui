@@ -1,19 +1,18 @@
 .info
 {
-    margin: 50px 0;
+    margin: 24px 0;
 
     hgroup.main
     {
-        padding: 0 0 5px 16px;
+        padding: 0 0 5px;
         margin: 0 0 20px 0;
         a
         {
             font-size: $font-size-secondary;
             font-weight: lighter;
         }
-        border-left: 8px solid $color-api-blue;
     }
-    pre 
+    pre
     {
         font-size: $font-size-primary-fixed-with;
     }

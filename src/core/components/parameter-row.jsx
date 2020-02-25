@@ -63,7 +63,7 @@ export default class ParameterRow extends Component {
   onChangeWrapper = (value, isXml = false) => {
     let { onChange, rawParam } = this.props
     let valueForUpstream
-    
+
     // Coerce empty strings and empty Immutable objects to null
     if(value === "" || (value && value.size === 0)) {
       valueForUpstream = null
@@ -193,20 +193,19 @@ export default class ParameterRow extends Component {
             { param.get("name") }
             { !required ? null : <span style={{color: "red"}}>&nbsp;*</span> }
           </div>
-          { /* Wrap parameter info into one line. */ }
-          <div>
-            <span className="parameter__type">
-              { type }
-              { itemType && `[${itemType}]` }
-              { format && <span className="prop-format">(${format})</span>}
-            </span>
-            <span className="parameter__deprecated">
+        </td>
+        <td className="col parameters-col_type">
+          <span className="parameter__type">
+            { type }
+            { itemType && `[${itemType}]` }
+            { format && <span className="prop-format">(${format})</span>}
+          </span>
+          <span className="parameter__deprecated">
               { isOAS3 && isOAS3() && param.get("deprecated") ? "deprecated": null }
             </span>
-            <span className="parameter__in">({ param.get("in") })</span>
-            { !showCommonExtensions || !commonExt.size ? null : commonExt.map((v, key) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
-            { !showExtensions || !extensions.size ? null : extensions.map((v, key) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
-          </div>
+          <span className="parameter__in">({ param.get("in") })</span>
+          { !showCommonExtensions || !commonExt.size ? null : commonExt.map((v, key) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
+          { !showExtensions || !extensions.size ? null : extensions.map((v, key) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
         </td>
 
         <td className="col parameters-col_description">
@@ -251,12 +250,12 @@ export default class ParameterRow extends Component {
           }
 
           {
-            !bodyParam && isExecute ? 
+            !bodyParam && isExecute ?
             <ParameterIncludeEmpty
               onChange={this.onChangeIncludeEmpty}
               isIncluded={specSelectors.parameterInclusionSettingFor(pathMethod, param.get("name"), param.get("in"))}
               isDisabled={value && value.size !== 0}
-              param={param} /> 
+              param={param} />
             : null
           }
 
