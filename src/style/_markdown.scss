@@ -9,13 +9,16 @@
     white-space: pre-wrap;
     background: $background-color-shadow;
     padding: 8px;
+    border-radius: 3px;
   }
 
   code {
     font-size: $font-size-primary-fixed-with;
     padding: 1px 4px;
     background: $background-color-shadow;
-    @include text_code(#37474f);
+    @include text_code(#fff);
+    margin: 0 2px;
+    border-radius: 3px;
   }
 
   pre > code {

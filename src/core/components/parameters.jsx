@@ -65,7 +65,7 @@ export default class Parameters extends Component {
       fn,
       getComponent,
       getConfigs,
-      specSelectors, 
+      specSelectors,
       specActions,
       pathMethod
     } = this.props

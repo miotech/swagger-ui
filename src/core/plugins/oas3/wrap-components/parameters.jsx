@@ -115,6 +115,7 @@ class Parameters extends Component {
         <div className="opblock-section-header">
           <div className="tab-header">
             <div onClick={() => this.toggleTab("parameters")} className={`tab-item ${this.state.parametersVisible && "active"}`}>
+              <h5 className="opblock-title__api-url"><span>API URL: {pathMethod[0]}</span></h5>
               <h5 className="opblock-title"><span>Parameters</span></h5>
             </div>
             { operation.get("callbacks") ?
@@ -136,6 +137,7 @@ class Parameters extends Component {
                 <thead>
                   <tr>
                     <th className="col col_header parameters-col_name">Name</th>
+                    <th className="col col_header parameters-col_type">Type</th>
                     <th className="col col_header parameters-col_description">Description</th>
                   </tr>
                 </thead>
